@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="audience" class="com.org.base.biz.Audience"></bean>
+    <bean id="poeticJuggler" class="com.org.base.service.impl.PoeticJuggler"/>
+    <bean id="play" class="com.org.base.biz.Play"/>
+    <bean id="magic" class="com.org.base.service.impl.Magician"/>
+    <bean id="volunteer" class="com.org.base.service.impl.Volunteer"/>
+    <!--普通配置-->
+    <!--    <aop:config>
+            <aop:aspect ref="audience">
+                <aop:before pointcut="execution(* com.org.base.biz.Play.play(..)) *"
+                            method="takeSeats"/>
+                <aop:before method="turnOffCellPhone"
+                            pointcut="execution(* com.org.base.biz.Play.play(..))*"/>
+                <aop:after pointcut="execution(* com.org.base.biz.Play.play(..))*"
+                           method="applaud"/>
+                <aop:after pointcut="execution(* com.org.base.biz.Play.play(..))*"
+                           method="demandRefund"/>
+            </aop:aspect>
+        </aop:config>-->
+    <!--加入id-->
+    <!--    <aop:config>
+            <aop:aspect ref="audience">
+                <aop:pointcut id="performance" expression="execution( * com.org.base.biz.Play.play(..)) *"/>
+                <aop:before method="takeSeats" pointcut-ref="performance"/>
+                <aop:before method="turnOffCellPhone" pointcut-ref="performance"/>
+                <aop:after method="applaud" pointcut-ref="performance"/>
+                <aop:after method="demandRefund" pointcut-ref="performance"/>
+            </aop:aspect>
+        </aop:config>-->
+    <!--    <aop:config>
+            <aop:aspect ref="audience">
+                <aop:pointcut id="performance" expression="execution( * com.org.base.biz.Play.play(..)) *"/>
+                <aop:around method="watchFormance" pointcut-ref="performance"/>
+            </aop:aspect>
+        </aop:config>-->
+    <aop:config>
+        <aop:aspect ref="magic">
+            <aop:pointcut id="thinking"
+                          expression="execution(* com.org.base.service.impl.Volunteer.thinkOfSomething(String)) and args(thoughts)"/>
+            <aop:before method="interceptThoughts" arg-names="thoughts" pointcut-ref="thinking"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

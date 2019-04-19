@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api" />
+        <module name="euerka" />
+        <module name="spring-cloud-consumer" />
+        <module name="spring-cloud-provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api" target="1.8" />
+      <module name="euerka" target="1.8" />
+      <module name="spring-cloud-boot" target="1.6" />
+      <module name="spring-cloud-consumer" target="1.8" />
+      <module name="spring-cloud-provider" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api" options="" />
+      <module name="euerka" options="" />
+      <module name="spring-cloud-consumer" options="" />
+      <module name="spring-cloud-provider" options="" />
+    </option>
+  </component>
+</project>

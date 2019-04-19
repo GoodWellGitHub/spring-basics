@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--byName-->
+    <!--    <bean id="victor" class="com.org.base.domain.Victor" autowire="byName">
+            <property name="song" value="take me hand"/>
+        </bean>
+        <bean id="instrument" class="com.org.base.service.impl.Saxophone">
+        </bean>
+        <bean id="guitar" class="com.org.base.service.impl.Guitar"/>-->
+
+    <!--byType 报错 -->
+    <!--        <bean id="victor" class="com.org.base.domain.Victor" autowire="byType">
+                <property name="song" value="take me hand"/>
+            </bean>
+            <bean id="instrument" class="com.org.base.service.impl.Saxophone">
+            </bean>
+            <bean id="guitar" class="com.org.base.service.impl.Guitar"/>-->
+
+    <!--byType primary=true的typebean只有一个时，不会报错-->
+<!--        <bean id="victor" class="com.org.base.domain.Victor" autowire="byType">
+            <property name="song" value="take me hand"/>
+        </bean>
+        <bean id="saxophone" class="com.org.base.service.impl.Saxophone" primary="true">
+        </bean>
+        <bean id="guitar" class="com.org.base.service.impl.Guitar"/>-->
+
+</beans>
