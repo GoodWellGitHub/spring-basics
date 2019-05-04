@@ -8,5 +8,8 @@ public class NumberT {
         String ss=decimal.divide(new BigDecimal(100)).setScale(2).toString();
         System.out.println(ss);
         System.out.println(decimal.divide(new BigDecimal(100)).setScale(2));
+
+        Byte b1=9;
+        System.out.println(b1.toString());
     }
 }
