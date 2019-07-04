@@ -16,10 +16,15 @@ public class TimeUtil {
         System.out.println("$$$$$$$$");
         System.out.println(LocalDateTime.now().with(TemporalAdjusters.firstDayOfMonth()));
         LocalDate firstDate = LocalDate.now().with(TemporalAdjusters.firstDayOfMonth());
-        LocalDateTime firstTime = LocalDateTime.of(firstDate.getYear(), firstDate.getMonth(), firstDate.getDayOfMonth(), 0, 0, 0,0);
+        LocalDateTime firstTime = LocalDateTime.of(firstDate.getYear(), firstDate.getMonth(), firstDate.getDayOfMonth(), 0, 0, 0, 0);
         System.out.println(firstTime);
 
         System.out.println(LocalDate.now());
+
+        LocalDateTime localDateTime1 = LocalDateTime.of(1972, 12, 11, 10, 10, 1);
+        LocalDateTime localDateTime2 = LocalDateTime.of(1972, 12, 11, 10, 10, 2);
+        System.out.println(localDateTime2.compareTo(localDateTime1));
+
 
     }
 }

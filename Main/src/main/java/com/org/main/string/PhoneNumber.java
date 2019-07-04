@@ -7,6 +7,9 @@ public class PhoneNumber {
     public boolean isMobileNO(String mobiles) {
         Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$");
         Matcher m = p.matcher(mobiles);
+        if (1+1>2){
+            System.out.println();
+        }
         return m.matches();
     }
     public static void main(String[] args){
